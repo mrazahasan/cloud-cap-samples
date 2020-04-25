@@ -3,10 +3,22 @@ POST http://localhost:4004/browse/Orders
 Content-Type: application/json
 
 { "OrderNo":"2019-09...", "Items":[
-    { "book_ID":201, "amount":5 }
+    { "book_ID":201, "amount":1 }
 ]}
 
 # Sending this three times should result in a 409: 5 exceeds stock for book #201
 
 ### Check books entity that stock was reduced
-GET http://localhost:4004/admin/Books(201)
+GET http://localhost:4004/browse/Books(201)
+
+### Check books entity
+GET http://localhost:4004/browse/Books
+
+### Check Books
+GET http://localhost:4004/admin/Books
+
+### Check Orders
+GET http://localhost:4004/admin/Orders
+
+### Check Authors
+GET http://localhost:4004/admin/Authors
